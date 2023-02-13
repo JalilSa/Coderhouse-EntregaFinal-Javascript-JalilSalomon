@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Juego de adivinanza de números</title>
+  <script src="main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<audio id="reproductor"></audio>
+<body onload="iniciarJuego()" >
+<main>
+  <div class="position-absolute top-50 start-50 translate-middle">
+  <h1>Juego de adivinanza de números</h1>
+  <h3></h3>
+  <label>Selecciona la dificultad:</label>
+  <select onchange="iniciarJuego()" id="dificultad" >
+    <option value="facil">Fácil</option>
+    <option value="normal">Normal</option>
+    <option value="dificil">Difícil</option>
+  </select>
+  <div>
+  <label for="numeroIngresado">Ingresa un número:</label>
+  <input type="number" id="numeroIngresado">
+  </div>
+  <button class="boton2" id="adivinar">Adivinar</button> 
+  <p id="contadorIntentos">Intentos: 0</p>
+  <div id="resultado"></div>
+
+  <button id="consejonum">Consejo</button>
+  <a id="darconsejo">...</a>
+
+
+  <div class="table" id="tablaResultadosContainer">
+    <h2>Tabla de resultados</h2>
+    <table id="tablaResultados">
+      <thead>
+        <tr>
+          <th>Apodo</th>
+          <th>Numero Aleatorio</th>
+          <th>Intentos</th>
+        </tr>
+      </thead>
+      <tbody id="tablaResultadosBody">
+      </tbody>
+    </table>
+  </div>
+</div>
+</main>
+<!--Login------------------------------------------------------------------------------------------------------------->
+<div class="dropdown position-absolute bottom-00 end-50">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Login
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="">Nombre</a><input type="text" id="nombre" class="input-group-text" ></li>
+    <li><a href="">Apellido</a><input type="text" id="apellido" class="input-group-text" ></li>
+    <li><a href="">Apodo</a><input type="text" id="apodo" class="input-group-text" ></li>
+    <li><button class="btn btn-secondary position-relative start-50 translate-middle-x" id="avanzar" data-bs-toggle="dropdown">
+      Avanzar</button></li>
+  </ul>
+</div>
+<!--Login------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
